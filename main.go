@@ -132,7 +132,7 @@ func arrayManipulation(n int32, queries [][]int32) int64 {
 			max = x
 		}
 	}
-	fmt.Println(max)
+
 	return max
 }
 
@@ -156,5 +156,6 @@ func main() {
 	//Soal 4
 	fmt.Println("============= Soal 4")
 	var inputArr = [][]int32{ {1,5,3}, {4,8,7}, {6,9,1}}
-	arrayManipulation(10,inputArr)
+	fmt.Println(arrayManipulation(10,inputArr))
+
 }
