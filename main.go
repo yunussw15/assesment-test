@@ -77,7 +77,7 @@ func MergeString(s1 string, s2 string) (result string) {
 	}
 
 	fmt.Println(result)
-	return
+	return result
 
 }
 
@@ -106,7 +106,7 @@ func TwoString(a string, b string) (answer string) {
 
 	fmt.Println(answer)
 
-	return
+	return answer
 }
 
 
@@ -114,10 +114,10 @@ func arrayManipulation(n int32, queries [][]int32) int64 {
 
 	arr := make([]int64, n+1)
 
-	for _, i := range queries {
-		a := int(i[0])
-		b := i[1]
-		k := int64(i[2])
+	for _, element := range queries {
+		a := int(element[0])
+		b := element[1]
+		k := int64(element[2])
 		arr[a] += k
 		if (b + 1) <= n {
 			arr[b+1] -= k
@@ -125,14 +125,12 @@ func arrayManipulation(n int32, queries [][]int32) int64 {
 	}
 
 	var x, max int64 = 0, 0
-
 	for i := 1; i <= int(n); i++ {
 		x += arr[i]
 		if max < x {
 			max = x
 		}
 	}
-
 	return max
 }
 
@@ -155,7 +153,7 @@ func main() {
 	TwoString("jack","daniel")
 	//Soal 4
 	fmt.Println("============= Soal 4")
-	var inputArr = [][]int32{ {1,5,3}, {4,8,7}, {6,9,1}}
+	var inputArr = [][]int32{{1,5,3}, {4,8,7}, {6,9,1}}
 	fmt.Println(arrayManipulation(10,inputArr))
 
 }
