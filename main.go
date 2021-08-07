@@ -66,14 +66,12 @@ func MergeString(s1 string, s2 string) (result string) {
 		// first string if it exists
 		if i < len(s1) {
 			result += string(asS1[i])
-
 		}
 
 		// Then choose the ith character of the
 		// second string if it exists
 		if i < len(s2) {
 			result += string(asS2[i])
-
 		}
 
 	}
@@ -111,6 +109,33 @@ func TwoString(a string, b string) (answer string) {
 	return
 }
 
+
+func arrayManipulation(n int32, queries [][]int32) int64 {
+
+	arr := make([]int64, n+1)
+
+	for _, i := range queries {
+		a := int(i[0])
+		b := i[1]
+		k := int64(i[2])
+		arr[a] += k
+		if (b + 1) <= n {
+			arr[b+1] -= k
+		}
+	}
+
+	var x, max int64 = 0, 0
+
+	for i := 1; i <= int(n); i++ {
+		x += arr[i]
+		if max < x {
+			max = x
+		}
+	}
+	fmt.Println(max)
+	return max
+}
+
 func main() {
 
 	//Soal 1
@@ -130,4 +155,6 @@ func main() {
 	TwoString("jack","daniel")
 	//Soal 4
 	fmt.Println("============= Soal 4")
+	var inputArr = [][]int32{ {1,5,3}, {4,8,7}, {6,9,1}}
+	arrayManipulation(10,inputArr)
 }
