@@ -153,6 +153,7 @@ func main() {
 	TwoString("jack","daniel")
 	//Soal 4
 	fmt.Println("============= Soal 4")
+	//Penjelasan Logic https://www.youtube.com/watch?v=hDhf04AJIRs
 	var inputArr = [][]int32{{1,5,3}, {4,8,7}, {6,9,1}}
 	fmt.Println(arrayManipulation(10,inputArr))
 
