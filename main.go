@@ -110,21 +110,21 @@ func TwoString(a string, b string) (answer string) {
 }
 
 
-func arrayManipulation(n int32, queries [][]int32) int64 {
+func arrayManipulation(n int32, queries [][]int32) int32 {
 
-	arr := make([]int64, n+1)
+	arr := make([]int32, n+1)
 
 	for _, element := range queries {
 		a := int(element[0])
 		b := element[1]
-		k := int64(element[2])
+		k := int32(element[2])
 		arr[a] += k
 		if (b + 1) <= n {
 			arr[b+1] -= k
 		}
 	}
 
-	var x, max int64 = 0, 0
+	var x, max int32 = 0, 0
 	for i := 1; i <= int(n); i++ {
 		x += arr[i]
 		if max < x {
@@ -151,6 +151,7 @@ func main() {
 	//Soal 5
 	fmt.Println("============= Soal 5")
 	TwoString("jack","daniel")
+	TwoString("ABACABA","ABACABA")
 	//Soal 4
 	fmt.Println("============= Soal 4")
 	//Penjelasan Logic https://www.youtube.com/watch?v=hDhf04AJIRs
